@@ -7,7 +7,13 @@ public class InsertInList {
   // Insert newNode after node.
   public static void insertAfter(ListNode<Integer> node,
                                  ListNode<Integer> newNode) {
-    // TODO - you fill in here.
+    if (node == null) {
+      node = newNode;
+    }
+
+    newNode.next = node.next;
+    node.next = newNode;
+
     return;
   }
   @EpiTest(testDataFile = "insert_in_list.tsv")
